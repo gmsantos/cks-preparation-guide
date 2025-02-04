@@ -137,6 +137,7 @@ etc.)
 
 - Implement Pod-to-Pod encryption using Cilium
 
+    - [Transparent Encryption](https://docs.cilium.io/en/stable/security/network/encryption/)
     - [Kubernetes Documentation > Concepts > Services, Load Balancing, and Networking > Ingress > TLS](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls)
 
 ## Supply Chain Security (20%)
