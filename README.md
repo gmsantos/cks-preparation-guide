@@ -101,6 +101,7 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 
 - Using least-privilege identity and access management
 
+    - [Kubernetes Documentation > Concepts > Security > Role Based Access Control Good Practices](https://kubernetes.io/docs/concepts/security/rbac-good-practices/)
     - [AWS > Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
     - [GCP - Using IAM securely](https://cloud.google.com/iam/docs/using-iam-securely)
     - [Azure > Best practices for Azure RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/best-practices)
@@ -119,9 +120,9 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 
 - Use appropriate pod security standards
 
-    - [Kubernetes Documentation > Concepts > Security > Pod Security Policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/#what-is-a-pod-security-policy)
+    - [Kubernetes Documentation > Concepts > Security > Pod Security Standards > Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
+    - [Kubernetes Documentation > Tasks > Configure Pods and Containers > Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
     - [Kubernetes Blog > OPA Gatekeeper: Policy and Governance for Kubernetes](https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/)
-    - [Kubernetes Documentation > Tasks > Configure Pods and > Containers > Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
 - Manage kubernetes secrets
 
