@@ -1,10 +1,10 @@
 ![Check Kubernetes documentation links](https://github.com/leandrocostam/cks-preparation-guide/workflows/Check%20Kubernetes%20documentation%20links/badge.svg)
 
-# Certified Kubernetes Security Specialist (CKS) - V1.31
+# Certified Kubernetes Security Specialist (CKS) - V1.33
 
 The objective of this repository is help you for taking the Certified Kubernetes Security Specialist (CKS) exam using online resources, especially using resources from [Kubernetes Official Documentation](https://kubernetes.io).
 
-The references were selected for the [Exam Curriculum 1.31](https://github.com/cncf/curriculum/blob/a5b467a07d357b44ee7a15a58784012b5c6960ff/CKS_Curriculum%20v1.31.pdf), and there are exclusive information for API objects and annotations. For more information, please see [CNCF Curriculum](https://github.com/cncf/curriculum/).
+The references were selected for the [Exam Curriculum 1.33](https://github.com/cncf/curriculum/blob/04aefac8f3d765e0a022b5c65bc55586a700e092/CKS_Curriculum%20v1.33.pdf), and there are exclusive information for API objects and annotations. For more information, please see [CNCF Curriculum](https://github.com/cncf/curriculum/).
 
 Please, feel free to place a pull request whether something is not up-to-date, should be added or contains wrong information/reference.
 
@@ -18,7 +18,7 @@ The exam is kind of "put your hands on", where you have some problems to fix wit
 
 My tip: Spend your time wisely. Use the Notebook feature (provided in exam's UI) to keep track of your progress, where you might take notes of each question, put some annotations in order to help you. Additionally, don't get stuck, move to the next problem, and take it back when you finish all the other problems.
 
-Exam Cost: $375 and includes one free retake.
+Exam Cost: $445 and includes one free retake.
 
 It's important to mention that you have access to [Kubernetes Official Documentation](https://kubernetes.io) during the exam. So get yourself familiar with Kubernetes online documentation, and know where to find all specific topics listed below. It might be helpful for you during the exam.
 
@@ -37,7 +37,6 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 - Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
 
     - [CIS Security > Securing Kubernetes](https://www.cisecurity.org/benchmark/kubernetes)
-    - [Cloud Native Wiki - CIS Benchmark Best Practices](https://www.aquasec.com/cloud-native-academy/kubernetes-in-production/kubernetes-cis-benchmark-best-practices-in-brief/)
     - [GitHub > Aqua Security > kube-bench](https://github.com/aquasecurity/kube-bench)
 
 - Properly set up Ingress objects with TLS
