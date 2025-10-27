@@ -1,10 +1,10 @@
 ![Check Kubernetes documentation links](https://github.com/leandrocostam/cks-preparation-guide/workflows/Check%20Kubernetes%20documentation%20links/badge.svg)
 
-# Certified Kubernetes Security Specialist (CKS) - V1.26
+# Certified Kubernetes Security Specialist (CKS) - V1.31
 
 The objective of this repository is help you for taking the Certified Kubernetes Security Specialist (CKS) exam using online resources, especially using resources from [Kubernetes Official Documentation](https://kubernetes.io).
 
-The references were selected for the [Exam Curriculum 1.26](https://github.com/cncf/curriculum/blob/67ee7f261b1d92d0049799be11f1da278807d150/CKS_Curriculum_%20v1.26.pdf), and there are exclusive information for API objects and annotations. For more information, please see [CNCF Curriculum](https://github.com/cncf/curriculum/).
+The references were selected for the [Exam Curriculum 1.31](https://github.com/cncf/curriculum/blob/a5b467a07d357b44ee7a15a58784012b5c6960ff/CKS_Curriculum%20v1.31.pdf), and there are exclusive information for API objects and annotations. For more information, please see [CNCF Curriculum](https://github.com/cncf/curriculum/).
 
 Please, feel free to place a pull request whether something is not up-to-date, should be added or contains wrong information/reference.
 
@@ -28,7 +28,7 @@ For information about the exam, please refer [Certified Kubernetes Security Spec
 
 Exam objectives that outline of the knowledge, skills and abilities that a Certified Kubernetes Security Specialist (CKS) can be expected to demonstrate.
 
-## Cluster Setup (10%)
+## Cluster Setup (15%)
 
 - Use Network security policies to restrict cluster level access
 
@@ -40,7 +40,7 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
     - [Cloud Native Wiki - CIS Benchmark Best Practices](https://www.aquasec.com/cloud-native-academy/kubernetes-in-production/kubernetes-cis-benchmark-best-practices-in-brief/)
     - [GitHub > Aqua Security > kube-bench](https://github.com/aquasecurity/kube-bench)
 
-- Properly set up Ingress objects with security control
+- Properly set up Ingress objects with TLS
 
     - [Kubernetes Documentation > Concepts > Services, Load Balancing, and Networking > Ingress > TLS](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls)
 
@@ -67,10 +67,6 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
                 - 169.254.169.254/32
         ```
 
-- Minimize use of, and access to, GUI elements
-
-    - [Kubernetes Documentation > Tasks > Access Applications in a Cluster > Deploy and Access the Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/#accessing-the-dashboard-ui)
-
 - Verify platform binaries before deploying
 
     - [Kubernetes Documentation > Tasks > Install Tools > Install and Set Up kubectl on Linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
@@ -78,10 +74,6 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
         > Note: Check the step 2 - validate binary
 
 ## Cluster Hardening (15%)
-
-- Restrict access to Kubernetes API
-
-    - [Kubernetes Documentation > Concepts > Security > Controlling Access to the Kubernetes API](https://kubernetes.io/docs/concepts/security/controlling-access/)
 
 - Use Role Based Access Controls to minimize exposure
 
@@ -91,11 +83,15 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 
     - [Kubernetes Documentation > Reference > API Access Control > Managing Service Accounts](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/)
 
-- Update Kubernetes frequently
+- Restrict access to Kubernetes API
+
+    - [Kubernetes Documentation > Concepts > Security > Controlling Access to the Kubernetes API](https://kubernetes.io/docs/concepts/security/controlling-access/)
+
+- Update Kubernetes to avoid vulnerabilities
 
     - [Kubernetes Documentation > Tasks > Administer a Cluster > Upgrade A Cluster](https://kubernetes.io/docs/tasks/administer-cluster/cluster-upgrade/)
 
-## System Hardening (15%)
+## System Hardening (10%)
 
 - Minimize host OS footprint (reduce attack surface)
 
@@ -103,8 +99,9 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
     - Identify and address open ports
     - Shut down any unnecessary services
 
-- Minimize IAM roles
+- Using least-privilege identity and access management
 
+    - [Kubernetes Documentation > Concepts > Security > Role Based Access Control Good Practices](https://kubernetes.io/docs/concepts/security/rbac-good-practices/)
     - [AWS > Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
     - [GCP - Using IAM securely](https://cloud.google.com/iam/docs/using-iam-securely)
     - [Azure > Best practices for Azure RBAC](https://docs.microsoft.com/en-us/azure/role-based-access-control/best-practices)
@@ -121,32 +118,34 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 
 ## Minimize Microservice Vulnerabilities (20%)
 
-- Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts
+- Use appropriate pod security standards
 
-    - [Kubernetes Documentation > Concepts > Security > Pod Security Policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/#what-is-a-pod-security-policy)
+    - [Kubernetes Documentation > Concepts > Security > Pod Security Standards > Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-standards/)
+    - [Kubernetes Documentation > Tasks > Configure Pods and Containers > Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
     - [Kubernetes Blog > OPA Gatekeeper: Policy and Governance for Kubernetes](https://kubernetes.io/blog/2019/08/06/opa-gatekeeper-policy-and-governance-for-kubernetes/)
-    - [Kubernetes Documentation > Tasks > Configure Pods and > Containers > Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
 - Manage kubernetes secrets
 
     - [Kubernetes Documentation > Concepts > Configuration > Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
 
-- Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers
+- Understand and implement isolation techniques (multi-tenancy, sandboxed containers,
+etc.)
 
     - [Kubernetes Documentation > Concepts > Security > Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/#what-about-sandboxed-pods)
     - [Kubernetes Documentation > Concepts > Containers > Runtime Class](https://kubernetes.io/docs/concepts/containers/runtime-class/)
     - [gvisor](https://gvisor.dev/docs/user_guide/quick_start/kubernetes/)
     - [kata containers](https://katacontainers.io/)
 
-- Implement pod to pod encryption by use of mTLS
+- Implement Pod-to-Pod encryption using Cilium
 
+    - [Transparent Encryption](https://docs.cilium.io/en/stable/security/network/encryption/)
     - [Kubernetes Documentation > Concepts > Services, Load Balancing, and Networking > Ingress > TLS](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls)
 
 ## Supply Chain Security (20%)
 
 - Minimize base image footprint
 
-    - Remove exploitable and non-sssential software
+    - Remove exploitable and non-essential software
     - Use multi-stage Dockerfiles to keep software compilation out of runtime images
     - Never bake any secrets into your images
     - Image scanning
@@ -155,30 +154,28 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 
     - [Kubernetes Documentation > Reference > API Access Control > Using Admission Controllers > ImagePolicyWebhook](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#imagepolicywebhook)
 
-- Use static analysis of user workloads (e.g. kubernetes resources, docker files)
+- Secure your supply chain (permitted registries, sign and validate artifacts, etc.)
+
+    - [Trivy](https://github.com/aquasecurity/trivy)
+
+- Perform static analysis of user workloads and container images (e.g. Kubesec, KubeLinter)
 
     - Secure base images
     - Remove unnecessary packages
     - Stop containers from using elevated privileges
 
-- Scan images for known vulnerabilities
-
-    - [Trivy](https://github.com/aquasecurity/trivy)
-
 ## Monitoring, Logging and Runtime Security (20%)
 
-- Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities
+- Perform behavioral analytics to detect malicious activities
 
+    - Use syscall process and file activities at the host and container level
     - [Falco](https://falco.org/docs/)
 
 - Detect threats within physical infrastructure, apps, networks, data, users and workloads
 
-- Detect all phases of attack regardless where it occurs and how it spreads
+- Investigate and identify phases of attack and bad actors within the environment
 
     - [Protecting Kubernetes Against MITRE ATT&CK](https://cloud.redhat.com/blog/protecting-kubernetes-against-mitre-attck-initial-access)
-
-- Perform deep analytical investigation and identification of bad actors within environment
-
     - [Kubernetes Documentation > Tasks > Monitoring, Logging, and Debugging >Auditing](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/)
 
 - Ensure immutability of containers at runtime
@@ -188,7 +185,7 @@ Exam objectives that outline of the knowledge, skills and abilities that a Certi
 
         > `readOnlyRootFilesystem`: Mounts the container's root filesystem as read-only
 
-- Use Audit Logs to monitor access
+- Use Kubernetes audit logs to monitor access
 
     - [Kubernetes Documentation > Tasks > Monitoring, Logging, and Debugging >Auditing](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/)
 
